@@ -22,7 +22,10 @@ This follows Google's recommendation for [responsive UI breakpoints](https://mat
 
 ## Grid System ##
 
-There are three basic elements of this grid system: grids, rows, and columns.  Rows must be contained by a grid.
+There are three basic elements of this grid system: grids, rows, and columns.  
+
+ - Rows must be contained by a grid
+ - Columns must be contained by a row
 
 ### Classes ###
 
