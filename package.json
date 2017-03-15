@@ -4,6 +4,17 @@
   "description": "A grid system that adheres to the responsive UI standards outlined for Google's Material Design",
   "style": "dist/material-responsive-grid.css",
   "main": "dist/material-responsive-grid.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/STORIS/material-responsive-grid.git"
+  },
+  "keywords": [
+	  "css",
+	  "postcss",
+	  "grid",
+	  "material design",
+	  "responsive"
+  ],
   "scripts": {
     "clean:dist": "rimraf ./dist",
 	 "build": "cross-env NODE_ENV=production postcss src/index.css --output dist/material-responsive-grid.css --no-map",
