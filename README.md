@@ -1,6 +1,6 @@
 # Material Responsive Grid #
 
-A grid system that adheres to the [responsive UI](https://material.io/guidelines/layout/responsive-ui.html) standards outlined for Google's [Material Design](https://material.io).
+A grid system that adheres to the [responsive UI](https://material.io/guidelines/layout/responsive-ui.html) standards outlined for Google's [Material Design](https://material.io).  The source consists of [PostCSS](http://postcss.org/) stylesheets that are imported in a specific order and built using [postcss-cli](https://github.com/postcss/postcss-cli).
 
 ## Breakpoints ##
 
@@ -19,8 +19,6 @@ This follows Google's recommendation for [responsive UI breakpoints](https://mat
 - With the exception of the first three classifications, screen sizes have 12 columns.
 - The gutter is either 16 px or 24 px.  A 24 px gutter is applied when both screen dimensions are greater than or equal to 600 px.
 - Grids will fill the viewport until 1600 px.  At this point, the grid can either: continue to fill the viewport or remain 1600 px wide (left aligned or centered).
-
-The breakpoints are implemented using media queries.  The source consists of [PostCSS](http://postcss.org/) stylesheets that are imported in a specific order in an index and built using [postcss-cli](https://github.com/postcss/postcss-cli).
 
 ## Classes ##
 
@@ -72,3 +70,7 @@ Columns are contained by a Row and have the following classes:
  - .hidden-{size}-only - This column will be hidden for a particular screen size
  - .hidden-{size}-down - This column will be hidden for screens as wide as or narrower than a particular screen size
  - .hidden-{size}-up - This column will be hidden for screens as wide as or wider than a particular screen size
+
+## Special Thanks ##
+
+This package was inspired by [BootStrap](https://github.com/twbs/bootstrap) and [Flexboxgrid](https://github.com/kristoferjoseph/flexboxgrid).
