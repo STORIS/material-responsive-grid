@@ -20,7 +20,11 @@ This follows Google's recommendation for [responsive UI breakpoints](https://mat
 - The gutter is either 16 px or 24 px.  A 24 px gutter is applied when both screen dimensions are greater than or equal to 600 px.
 - Grids will fill the viewport until 1600 px.  At this point, the grid can either: continue to fill the viewport or remain 1600 px wide (left aligned or centered).
 
-## Classes ##
+## Grid System ##
+
+There are three basic elements of this grid system: grids, rows, and columns.  Rows must be contained by a grid.
+
+### Classes ###
 
 Most classes apply to a particular screen size.  This relationship is designated by the inclusion of the screen size's abbreviation in the class name:
 
@@ -33,10 +37,6 @@ Most classes apply to a particular screen size.  This relationship is designated
 - Extra-large: *xl12* or *xl*
 
 For screen sizes with twelve columns, a duplicate set of classes has been provided that does not include the number of columns in the screen size's abbreviation.
-
-## Grid System ##
-
-There are three basic elements of this grid system: grids, rows, and columns.  Rows must be contained by a grid.
 
 ### Grids ###
 
