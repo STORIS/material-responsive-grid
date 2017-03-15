@@ -1,0 +1,41 @@
+:root {
+	--gutter-small: 16px;
+	--gutter-large: 24px;
+	--fixed-width-cutoff: 1600px;
+	--xs4-cols: 4;
+	--xs8-cols: 8;
+	--sm8-cols: 8;
+	--sm12-cols: 12;
+	--md12-cols: 12;
+	--lg12-cols: 12;
+	--xl12-cols: 12;
+
+	--xs4-col-pct: calc(100 / var(--xs4-cols));
+	--xs8-col-pct: calc(100 / var(--xs8-cols));
+	--sm8-col-pct: calc(100 / var(--sm8-cols));
+	--sm12-col-pct: calc(100 / var(--sm12-cols));
+	--md12-col-pct: calc(100 / var(--md12-cols));
+	--lg12-col-pct: calc(100 / var(--lg12-cols));
+	--xl12-col-pct: calc(100 / var(--xl12-cols));
+	--half-gutter-small: calc(var(--gutter-small) / 2);
+	--half-gutter-large: calc(var(--gutter-large) / 2);
+	--fixed-width-large: calc(var(--fixed-width-minimum) - var(--lg12-gutter));
+}
+
+@custom-media --xs8-viewport only screen and (min-width: 480px);
+@custom-media --sm8-viewport only screen and (min-width: 600px);
+@custom-media --sm12-viewport only screen and (min-width: 840px);
+@custom-media --md12-viewport only screen and (min-width: 960px);
+@custom-media --lg12-viewport only screen and (min-width: 1280px);
+@custom-media --xl12-viewport only screen and (min-width: 1920px);
+
+@custom-media --xs4-viewport-max only screen and (max-width: 479px);
+@custom-media --xs8-viewport-max only screen and (max-width: 599px);
+@custom-media --sm8-viewport-max only screen and (max-width: 839px);
+@custom-media --sm12-viewport-max only screen and (max-width: 959px);
+@custom-media --md12-viewport-max only screen and (max-width: 1279px);
+@custom-media --lg12-viewport-max only screen and (max-width: 1919px);
+
+@custom-media --use-large-gutter (width >= 600px) and (height >= 600px);
+@custom-media --fixed-grid-applies (min-width: 1600px);
+@custom-media --fixed-grid-applies-large-gutter (height >= 600px);

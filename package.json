@@ -1,0 +1,24 @@
+{
+  "name": "material-responsive-grid",
+  "version": "1.0.0",
+  "description": "A grid system that adheres to the responsive UI standards outlined for Google's Material Design",
+  "style": "dist/material-responsive-grid.css",
+  "main": "dist/material-responsive-grid.css",
+  "scripts": {
+    "clean:dist": "rimraf ./dist",
+	 "build": "cross-env NODE_ENV=production postcss src/index.css --output dist/material-responsive-grid.css --no-map",
+	 "build:dev": "cross-env NODE_ENV=development postcss src/index.css --output dist/material-responsive-grid.css --no-map",
+	 "prebuild": "npm run clean:dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ken Gregory",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^3.1.4",
+    "cssnano": "^3.10.0",
+    "postcss-cli": "^3.0.0-beta",
+    "postcss-cssnext": "^2.9.0",
+    "postcss-import": "^9.1.0",
+    "rimraf": "^2.5.4"
+  }
+}

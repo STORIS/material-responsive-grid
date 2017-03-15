@@ -1,0 +1,173 @@
+@import 'variables.css';
+
+.row {
+	box-sizing: border-box;
+	display: flex;
+	flex: 0 1 auto;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	margin-right: calc(var(--half-gutter-small) * -1);
+	margin-left: calc(var(--half-gutter-small) * -1);
+
+	@media (--use-large-gutter) {
+		margin-right: calc(var(--half-gutter-large) * -1);
+		margin-left: calc(var(--half-gutter-large) * -1);
+	}
+}
+
+.row.reverse {
+	flex-direction: row-reverse;
+}
+
+.grid {
+	margin-right: var(--half-gutter-small);
+	margin-left: var(--half-gutter-small);
+
+	@media (--use-large-gutter) {
+		margin-right: var(--half-gutter-large);
+		margin-left: var(--half-gutter-large);
+	}
+}
+
+/* fixed grid rules for viewports at the fixed width cutoff */
+@media (--fixed-grid-applies) {
+	.grid-fixed-left,
+	.grid-fixed-center {
+		margin-left: auto;
+		margin-right: auto;
+		width: calc(var(--fixed-width-cutoff) - var(--gutter-small));
+
+		@media (--fixed-grid-applies-large-gutter) {
+			width: calc(var(--fixed-width-cutoff) - var(--gutter-large));
+		}
+	}
+
+	.grid-fixed-left {
+		margin-left: 0;
+	}
+}
+
+/* convenience classes that work at all breakpoints */
+.col-quarter-row,
+.col-half-row,
+.col-three-quarter-row,
+.col-full-row {
+	box-sizing: border-box;
+	flex: 0 0 auto;
+	padding-right: var(--half-gutter-small);
+	padding-left: var(--half-gutter-small);
+
+	@media (--use-large-gutter) {
+		padding-right: var(--half-gutter-large);
+		padding-left: var(--half-gutter-large);
+	}
+}
+
+.col-quarter-row {
+	flex-basis: 25%;
+	max-width: 25%;	
+}
+
+.col-half-row {
+	flex-basis: 50%;
+	max-width: 50%;	
+}
+
+.col-three-quarter-row {
+	flex-basis: 75%;
+	max-width: 75%;	
+}
+
+.col-full-row {
+	flex-basis: 100%;
+	max-width: 100%;	
+}
+
+/* hidden columns - edge cases, all sizes hidden */
+.hidden-xl-down,
+.hidden-xl12-down,
+.hidden-xs4-up {
+	display: none;
+}
+
+/* hidden columns - from this size up */
+.hidden-xs8-up {
+	@media (--xs8-viewport) {
+		display: none;
+	}
+}
+
+.hidden-sm8-up {
+	@media (--sm8-viewport) {
+		display: none;
+	}
+}
+
+.hidden-sm-up,
+.hidden-sm12-up {
+	@media (--sm12-viewport) {
+		display: none;
+	}
+}
+
+.hidden-md-up,
+.hidden-md12-up {
+	@media (--md12-viewport) {
+		display: none;
+	}
+}
+
+.hidden-lg-up,
+.hidden-lg12-up {
+	@media (--lg12-viewport) {
+		display: none;
+	}
+}
+
+.hidden-xl-up,
+.hidden-xl12-up {
+	@media (--xl12-viewport) {
+		display: none;
+	}
+}
+
+/* hidden columns - from this size down */
+.hidden-xs4-down {
+	@media (--xs4-viewport-max) {
+		display: none;
+	}
+}
+
+.hidden-xs8-down {
+	@media (--xs8-viewport-max) {
+		display: none;
+	}
+}
+
+.hidden-sm8-down {
+	@media (--sm8-viewport-max) {
+		display: none;
+	}
+}
+
+.hidden-sm-down,
+.hidden-sm12-down {
+	@media (--sm12-viewport-max) {
+		display: none;
+	}
+}
+
+.hidden-md-down,
+.hidden-md12-down {
+	@media (--md12-viewport-max) {
+		display: none;
+	}
+}
+
+.hidden-lg-down,
+.hidden-lg12-down {
+	@media (--lg12-viewport-max) {
+		display: none;
+	}
+}
