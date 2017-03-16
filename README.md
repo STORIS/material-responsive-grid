@@ -53,7 +53,7 @@ The default behavior for a grid will be to fill the viewport, which is the behav
 
 ### Rows ###
 
-Rows are contained by a Grid have the following classes:
+Rows must be contained by a Grid and have the following classes:
 
  - .row - The element that contains columns.  It uses a negative margin that negates the outer gutter of the first and last columns.
  - .reverse - Reverse direction of this row.
@@ -68,7 +68,7 @@ Rows are contained by a Grid have the following classes:
 
 ### Columns ###
 
-Columns are contained by a Row and have the following classes:
+Columns must be contained by a Row and have the following classes:
 
  - .col-{size}-{integer, 1-max column count} - Number of columns to consume for a particular screen size
  - .col-{size}-offset-{integer, 0-max column count-1} - Number of columns to offset this column for a particular screen size
@@ -78,6 +78,7 @@ Columns are contained by a Row and have the following classes:
  - .hidden-{size}-down - This column will be hidden for screens as wide as or narrower than a particular screen size
  - .hidden-{size}-up - This column will be hidden for screens as wide as or wider than a particular screen size
 
-## Special Thanks ##
+## Inspiration ##
 
-This package was inspired by [BootStrap](https://github.com/twbs/bootstrap) and [Flexboxgrid](https://github.com/kristoferjoseph/flexboxgrid).
+- [Flexboxgrid](https://github.com/kristoferjoseph/flexboxgrid)
+- [BootStrap](https://github.com/twbs/bootstrap)
