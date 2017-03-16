@@ -80,5 +80,5 @@ Columns must be contained by a Row and have the following classes:
 
 ## Inspiration ##
 
-- [Flexboxgrid](https://github.com/kristoferjoseph/flexboxgrid)
-- [BootStrap](https://github.com/twbs/bootstrap)
+- [flexboxgrid](https://github.com/kristoferjoseph/flexboxgrid)
+- [bootstrap](https://github.com/twbs/bootstrap)
