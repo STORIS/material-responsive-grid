@@ -1,31 +1,36 @@
 {
-  "name": "material-responsive-grid",
+  "name": "material-responsive-grid-source",
+  "private": true,
   "version": "1.0.0",
   "description": "A grid system that adheres to the responsive UI standards outlined for Google's Material Design",
-  "style": "dist/material-responsive-grid.css",
-  "main": "dist/material-responsive-grid.css",
+  "style": "dibuildst/material-responsive-grid.css",
+  "main": "build/material-responsive-grid.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/STORIS/material-responsive-grid.git"
   },
   "keywords": [
-	  "css",
-	  "postcss",
-	  "grid",
-	  "material design",
-	  "responsive"
+    "css",
+    "postcss",
+    "grid",
+    "material design",
+    "responsive"
   ],
   "scripts": {
-    "clean:dist": "rimraf ./dist",
-	 "build": "cross-env NODE_ENV=production postcss src/index.css --output dist/material-responsive-grid.css --no-map",
-	 "build:dev": "cross-env NODE_ENV=development postcss src/index.css --output dist/material-responsive-grid.css --no-map",
-	 "prebuild": "npm run clean:dist",
+    "build": "npm run build:css && npm run build:copy-files",
+    "build:copy-files": "babel-node ./scripts/copy-files.js",
+    "build:css": "cross-env NODE_ENV=production postcss src/index.css --output build/material-responsive-grid.css --no-map",
+    "build:css-dev": "cross-env NODE_ENV=development postcss src/index.css --output build/material-responsive-grid.css --no-map",
+    "clean:build": "rimraf ./build",
+    "prebuild": "npm run clean:build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ken Gregory",
   "license": "MIT",
   "homepage": "https://github.com/STORIS/material-responsive-grid",
   "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
     "cross-env": "^3.1.4",
     "cssnano": "^3.10.0",
     "postcss-cli": "^3.0.0-beta",
