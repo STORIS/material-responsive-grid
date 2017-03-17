@@ -36,15 +36,20 @@
 	.grid-fixed-center {
 		margin-left: auto;
 		margin-right: auto;
-		width: calc(var(--fixed-width-cutoff) - var(--gutter-small));
+		width: auto;
+		max-width: calc(var(--fixed-width-cutoff) - var(--gutter-small));
 
 		@media (--fixed-grid-applies-large-gutter) {
-			width: calc(var(--fixed-width-cutoff) - var(--gutter-large));
+			max-width: calc(var(--fixed-width-cutoff) - var(--gutter-large));
 		}
 	}
 
 	.grid-fixed-left {
-		margin-left: 0;
+		margin-left: var(--half-gutter-small);
+
+		@media (--use-large-gutter) {
+			margin-left: var(--half-gutter-large);
+		}
 	}
 }
 
