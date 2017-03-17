@@ -2,7 +2,21 @@
 
 A grid system that adheres to the [responsive UI](https://material.io/guidelines/layout/responsive-ui.html) standards outlined for Google's [Material Design](https://material.io).  The source consists of [PostCSS](http://postcss.org/) stylesheets that are imported in a specific order and built using [postcss-cli](https://github.com/postcss/postcss-cli).
 
-## Breakpoints ##
+## Installation ##
+
+```
+npm i material-responsive-grid --save
+```
+
+## Grid System ##
+
+There are three basic elements of this grid system: grids, rows, and columns.  
+
+ - Rows must be contained by a grid
+ - Columns must be contained by a row
+
+
+### Breakpoints ###
 
 This grid system supports six screen sizes:
 
@@ -20,13 +34,6 @@ This follows Google's recommendation for [responsive UI breakpoints](https://mat
 - The gutter is either 16 px or 24 px.  A 24 px gutter is applied when both screen dimensions are greater than or equal to 600 px.
 - Grids will fill the viewport until 1600 px.  At this point, the grid can either: continue to fill the viewport or remain 1600 px wide (left aligned or centered).
 
-## Grid System ##
-
-There are three basic elements of this grid system: grids, rows, and columns.  
-
- - Rows must be contained by a grid
- - Columns must be contained by a row
-
 ### Classes ###
 
 Most classes apply to a particular screen size.  This relationship is designated by the inclusion of the screen size's abbreviation in the class name:
@@ -41,7 +48,7 @@ Most classes apply to a particular screen size.  This relationship is designated
 
 For screen sizes with twelve columns, a duplicate set of classes has been provided that does not include the number of columns in the screen size's abbreviation.
 
-### Grids ###
+#### Grids ####
 
 Grids have the following classes:
 
@@ -51,7 +58,7 @@ Grids have the following classes:
 
 The default behavior for a grid will be to fill the viewport, which is the behavior that will occur when the fixed-width classes are omitted.
 
-### Rows ###
+#### Rows ####
 
 Rows must be contained by a Grid and have the following classes:
 
@@ -66,7 +73,7 @@ Rows must be contained by a Grid and have the following classes:
  - .around-{size} - Evenly distribute unused space around columns for the specified sizes.
  - .between-{size} - Evenly distribute unused space between columns for the specified sizes.
 
-### Columns ###
+#### Columns ####
 
 Columns must be contained by a Row and have the following classes:
 
