@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "description": "A grid system that adheres to the responsive UI standards outlined for Google's Material Design",
-  "style": "dibuildst/material-responsive-grid.css",
+  "style": "build/material-responsive-grid.css",
   "main": "build/material-responsive-grid.css",
   "repository": {
     "type": "git",
