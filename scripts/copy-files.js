@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import path from 'path';
+/* eslint-disable import/no-extraneous-dependencies */
 import fse from 'fs-extra';
 
 const files = [
@@ -8,7 +9,7 @@ const files = [
 	'LICENSE',
 ];
 
-const resolveBuildPath = (file) => (
+const resolveBuildPath = file => (
 	path.resolve(__dirname, '../build/', path.basename(file))
 );
 
@@ -21,7 +22,7 @@ const copyFile = (file) => {
 			(err) => {
 				if (err) throw err;
 				resolve();
-			}
+			},
 		);
 	})
 	.then(() => console.log(`Copied ${file} to ${buildPath}`));
@@ -34,7 +35,7 @@ const createPackageFile = () => (
 			resolve(data);
 		});
 	})
-	.then((data) => JSON.parse(data))
+	.then(data => JSON.parse(data))
 	.then((packageData) => {
 		const {
 			author,
@@ -77,6 +78,6 @@ const createPackageFile = () => (
 );
 
 Promise.all(
-	files.map(file => copyFile(file))
+	files.map(file => copyFile(file)),
 )
 .then(() => createPackageFile());
