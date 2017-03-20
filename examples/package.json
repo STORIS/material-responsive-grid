@@ -1,0 +1,81 @@
+{
+  "name": "material-responsive-grid-examples",
+  "private": true,
+  "version": "1.0.1",
+  "description": "A set of examples for material-responsive-grid",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development webpack-dev-server",
+    "lint": "eslint --ignore-path .eslintignore -- ./src/. ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "boilerplate",
+    "eslint",
+    "webpack",
+    "react",
+    "redux"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/STORIS/material-responsive-grid.git"
+  },
+  "author": "Ken Gregory",
+  "license": "ISC",
+  "homepage": "https://github.com/STORIS/material-responsive-grid",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.10",
+    "babel-polyfill": "^6.22.0",
+    "babel-preset-env": "^1.2.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "cross-env": "^3.1.4",
+    "css-loader": "^0.26.1",
+    "dotenv": "^4.0.0",
+    "eslint": "^3.14.0",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-import-resolver-webpack": "^0.8.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
+    "html-webpack-plugin": "^2.26.0",
+    "postcss-cssnext": "^2.9.0",
+    "postcss-import": "^9.1.0",
+    "postcss-loader": "^1.2.2",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "rimraf": "^2.5.4",
+    "style-loader": "^0.13.1",
+    "webpack": "^2.2.1",
+    "webpack-combine-loaders": "^2.0.3",
+    "webpack-dev-server": "^2.3.0"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "normalize.css": "^5.0.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "webfontloader": "^1.6.27"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react",
+      "stage-2"
+    ],
+    "plugins": [],
+    "env": {
+      "development": {
+        "presets": []
+      },
+      "production": {
+        "presets": []
+      },
+      "test": {
+        "presets": []
+      }
+    }
+  }
+}
