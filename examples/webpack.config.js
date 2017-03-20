@@ -1,7 +1,6 @@
 const combineLoaders = require('webpack-combine-loaders');
 const cssnext = require('postcss-cssnext');
 const cssImport = require('postcss-import');
-const dotenv = require('dotenv');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
@@ -10,22 +9,6 @@ const webpack = require('webpack');
 const NODE_ENV = process.env.NODE_ENV;
 const isDev = NODE_ENV === 'development';
 const isProd = NODE_ENV === 'production';
-
-// import .env variables to global space
-const dotEnvVars = dotenv.config();
-const dotEnvDefines = !dotEnvVars.error ? dotEnvVars.parsed : {};
-const defines =
-	Object.keys(dotEnvDefines)
-		.reduce((accumulator, key) => {
-			const retAccumulator = accumulator;
-			const val = JSON.stringify(dotEnvDefines[key]);
-			retAccumulator[`__${key.toUpperCase()}__`] = val;
-			return retAccumulator;
-		}, {
-			'process.env': {
-				NODE_ENV: JSON.stringify(NODE_ENV),
-			},
-		});
 
 const config = {
 	entry: [
@@ -59,7 +42,6 @@ const config = {
 		}],
 	},
 	plugins: [
-		new webpack.DefinePlugin(defines),
 		new HtmlWebpackPlugin({
 			filename: 'index.html',
 			template: path.join(__dirname, 'src', 'index.html'),
