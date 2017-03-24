@@ -88,6 +88,33 @@ Columns must be contained by a Row and have the following classes:
  - .hidden-{size}-down - This column will be hidden for screens as wide as or narrower than a particular screen size
  - .hidden-{size}-up - This column will be hidden for screens as wide as or wider than a particular screen size
 
+## Example ##
+
+```
+<div class="grid">
+   <div class="row">
+      <div class="col-xs4-4 col-lg-6">
+         <p>This column consumes the entire row for extra-small,
+         small, and medium screens.  For large and extra-large
+         screens, it consumes half of the row.</p>
+      </div>
+      <div class="hidden-md-down col-half-row">
+         <p>This column isn't visible for extra-small, small, 
+         and medium screens, but is visible for large and 
+         extra-large screens.  It consumes half of the row.
+      </div>
+      <div class="hidden-sm-down hidden-up-xl col-md-12">
+         <p>This column is only visible for medium and large
+         screens and consumes the entire row.</p>
+      </div>
+      <div class="hidden-sm8-only hidden-sm-only hidden-lg-only col-full-row">
+         <p>This column is hidden for small and large screens
+         and consumes the entire row.</p>
+      </div>
+   </div>
+</div>
+```
+
 ## Inspiration ##
 
 - [flexboxgrid](https://github.com/kristoferjoseph/flexboxgrid)
