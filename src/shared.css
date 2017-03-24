@@ -30,8 +30,16 @@
 	}
 }
 
+.grid.marginless {
+	overflow-x: hidden;
+	margin-left: 0;
+	margin-right: 0;
+}
+
 /* fixed grid rules for viewports at the fixed width cutoff */
 @media (--fixed-grid-applies) {
+	.grid.fixed-left,
+	.grid.fixed-center,
 	.grid-fixed-left,
 	.grid-fixed-center {
 		margin-left: auto;
@@ -44,6 +52,7 @@
 		}
 	}
 
+	.grid.fixed-left,
 	.grid-fixed-left {
 		margin-left: var(--half-gutter-small);
 
