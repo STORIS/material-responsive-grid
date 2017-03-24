@@ -97,7 +97,10 @@ const GridTestPage = () => (
 
 		<section>
 			<h2>Offset Columns</h2>
-			<p>Columns that are positioned by specifying an offset, which skips the specified number of columns</p>
+			<p>
+				Columns that are positioned by specifying an offset, which skips the specified
+				number of columns
+			</p>
 			<div className={mrg.row}>
 				<div className={`${mrg['col-xs4-offset-3']} ${mrg['col-xs4-1']}`}>
 					<div className={styles.box}>1st</div>
@@ -240,7 +243,10 @@ const GridTestPage = () => (
 
 		<section>
 			<h2>Reorder Columns</h2>
-			<p>Columns can become the first or last in the row.  Column position is based on the Row&apos;s flow direction, which can be reversed.</p>
+			<p>
+				Columns can become the first or last in the row.  Column position is based on the
+				Row&apos;s flow direction, which can be reversed.
+			</p>
 			<div className={mrg.row}>
 				<div className={`${mrg['col-xs4-1']} ${mrg['col-sm8-1']} ${mrg['col-sm-2']}`}>
 					<div className={`${styles.box} ${styles['box-other']}`}>1</div>
@@ -331,7 +337,10 @@ const GridTestPage = () => (
 
 		<section>
 			<h2>Reversing a Row</h2>
-			<p>Rows can be reversed.  This changes the flow direction, which affects columns that have been changed to be first or last.</p>
+			<p>
+				Rows can be reversed.  This changes the flow direction, which affects columns that
+				have been changed to be first or last.
+			</p>
 			<div className={`${mrg.row} ${mrg.reverse}`}>
 				<div className={`${mrg['col-xs4-1']} ${mrg['col-sm8-1']} ${mrg['col-sm-2']}`}>
 					<div className={`${styles.box} ${styles['box-other']}`}>1</div>
@@ -516,7 +525,7 @@ const GridTestPage = () => (
            if xl12, hidden
         </div>
      </div>
-  </div>`}</pre>			
+  </div>`}</pre>
 		</section>
 
 		<section>
@@ -529,14 +538,14 @@ const GridTestPage = () => (
 					</div>
 				</div>
 			</div>
-			<div className={`${mrg.grid} ${mrg['grid-fixed-left']}`}>
+			<div className={`${mrg.grid} ${mrg['fixed-left']}`}>
 				<div className={mrg.row}>
 					<div className={mrg['col-xs4-4']}>
 						<div className={styles.box}>Fixed width, aligned left</div>
 					</div>
 				</div>
 			</div>
-			<div className={`${mrg.grid} ${mrg['grid-fixed-center']}`}>
+			<div className={`${mrg.grid} ${mrg['fixed-center']}`}>
 				<div className={mrg.row}>
 					<div className={mrg['col-xs4-4']}>
 						<div className={styles.box}>Fixed width, aligned center</div>
@@ -563,7 +572,110 @@ const GridTestPage = () => (
            Fixed width, aligned center
         </div>
      </div>
-  </div>`}</pre>	
+  </div>`}</pre>
+		</section>
+
+		<section>
+			<h2>Marginless Grid</h2>
+			<p>
+				By default, grids have a margin that preserves the outer padding on edge-adjacent
+				columns and prevents a row of content from spanning edge to edge.  A marginless
+				grid eliminates this outer padding.
+			</p>
+			<div className={mrg.grid}>
+				<div className={mrg.row}>
+					<div className={`${mrg['col-xs4-4']} ${styles['box-other']}`}>
+						<div className={styles.inner}>
+							Default Grid
+						</div>
+					</div>
+					<div className={`${mrg['col-xs4-1']} ${styles['box-other']}`}>
+						<div className={styles.inner}>
+							Outer
+						</div>
+					</div>
+					<div className={`${mrg['col-xs4-1']} ${styles['box-other']}`}>
+						<div className={styles.inner}>
+							Inner
+						</div>
+					</div>
+					<div className={`${mrg['col-xs4-1']} ${styles['box-other']}`}>
+						<div className={styles.inner}>
+							Inner
+						</div>
+					</div>
+					<div className={`${mrg['col-xs4-1']} ${styles['box-other']}`}>
+						<div className={styles.inner}>
+							Outer
+						</div>
+					</div>
+				</div>
+			</div>
+			<div className={`${mrg.grid} ${mrg.marginless}`}>
+				<div className={mrg.row}>
+					<div className={`${mrg['col-xs4-4']} ${styles['box-other']}`}>
+						<div className={styles.inner}>Marginless Grid</div>
+					</div>
+					<div className={`${mrg['col-xs4-1']} ${styles['box-other']}`}>
+						<div className={styles.inner}>
+							Outer
+						</div>
+					</div>
+					<div className={`${mrg['col-xs4-1']} ${styles['box-other']}`}>
+						<div className={styles.inner}>
+							Inner
+						</div>
+					</div>
+					<div className={`${mrg['col-xs4-1']} ${styles['box-other']}`}>
+						<div className={styles.inner}>
+							Inner
+						</div>
+					</div>
+					<div className={`${mrg['col-xs4-1']} ${styles['box-other']}`}>
+						<div className={styles.inner}>
+							Outer
+						</div>
+					</div>
+				</div>
+			</div>
+			<pre className={styles.code}>{`  <div class="grid">
+     <div class="row">
+        <div class="col-xs4-4">
+           Default Grid
+        </div>
+        <div class="col-xs4-1">
+           Outer
+        </div>
+        <div class="col-xs4-1">
+           Inner
+        </div>
+        <div class="col-xs4-1">
+           Inner
+        </div>
+        <div class="col-xs4-1">
+           Outer
+        </div>
+     </div>
+  </div>
+  <div class="grid marginless">
+     <div class="row">
+        <div class="col-xs4-4">
+           Marginless Grid
+        </div>
+        <div class="col-xs4-1">
+           Outer
+        </div>
+        <div class="col-xs4-1">
+           Inner
+        </div>
+        <div class="col-xs4-1">
+           Inner
+        </div>
+        <div class="col-xs4-1">
+           Outer
+        </div>
+     </div>
+  </div>`}</pre>
 		</section>
 
 	</div>

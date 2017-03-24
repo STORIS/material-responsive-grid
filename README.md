@@ -53,10 +53,13 @@ For screen sizes with twelve columns, a duplicate set of classes has been provid
 Grids have the following classes:
 
  - .grid - The main element that contains rows.  It has a margin applied that will absorb the row's negative left and right margins.
- - .grid-fixed-left - Starting at 1600 px, the grid will be fixed width and left aligned in the viewport.
- - .grid-fixed-center - Starting at 1600 px, the grid will be fixed width and centered horizontally in the viewport.
-
-The default behavior for a grid will be to fill the viewport, which is the behavior that will occur when the fixed-width classes are omitted.
+ - .marginless - Eliminates the outer padding that prevents a row's content from spanning edge to edge.
+ - .fixed-left - Starting at 1600 px, the grid will be fixed width and left aligned in the viewport.
+ - .fixed-center - Starting at 1600 px, the grid will be fixed width and centered horizontally in the viewport.
+ - .grid-fixed-left - Deprecated, see *.fixed-left*
+ - .grid-fixed-center - Deprecated, see *.fixed-center*
+ 
+The default behavior for a grid will be to fill the viewport and preserve outer padding on edge-adjacent columns.
 
 #### Rows ####
 
@@ -84,6 +87,33 @@ Columns must be contained by a Row and have the following classes:
  - .hidden-{size}-only - This column will be hidden for a particular screen size
  - .hidden-{size}-down - This column will be hidden for screens as wide as or narrower than a particular screen size
  - .hidden-{size}-up - This column will be hidden for screens as wide as or wider than a particular screen size
+
+## Example ##
+
+```
+<div class="grid">
+   <div class="row">
+      <div class="col-xs4-4 col-lg-6">
+         <p>This column consumes the entire row for extra-small,
+         small, and medium screens.  For large and extra-large
+         screens, it consumes half of the row.</p>
+      </div>
+      <div class="hidden-md-down col-half-row">
+         <p>This column isn't visible for extra-small, small, 
+         and medium screens, but is visible for large and 
+         extra-large screens.  It consumes half of the row.
+      </div>
+      <div class="hidden-sm-down hidden-up-xl col-md-12">
+         <p>This column is only visible for medium and large
+         screens and consumes the entire row.</p>
+      </div>
+      <div class="hidden-sm8-only hidden-sm-only hidden-lg-only col-full-row">
+         <p>This column is hidden for small and large screens
+         and consumes the entire row.</p>
+      </div>
+   </div>
+</div>
+```
 
 ## Inspiration ##
 
