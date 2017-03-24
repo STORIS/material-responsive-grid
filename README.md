@@ -80,6 +80,10 @@ Rows must be contained by a Grid and have the following classes:
 
 Columns must be contained by a Row and have the following classes:
 
+ - .col-quarter-row - Consumes a quarter of a row for all screen sizes
+ - .col-half-row - Consumes half of a row for all screen sizes
+ - .col-three-quarter-row - Consumes three-quarters of a row for all screen sizes
+ - .col-full-row - Consumes the full row for all screen sizes
  - .col-{size}-{integer, 1-max column count} - Number of columns to consume for a particular screen size
  - .col-{size}-offset-{integer, 0-max column count-1} - Number of columns to offset this column for a particular screen size
  - .first-{size} - Present this column first for a particular screen size (based on row direction)
