@@ -53,10 +53,13 @@ For screen sizes with twelve columns, a duplicate set of classes has been provid
 Grids have the following classes:
 
  - .grid - The main element that contains rows.  It has a margin applied that will absorb the row's negative left and right margins.
- - .grid-fixed-left - Starting at 1600 px, the grid will be fixed width and left aligned in the viewport.
- - .grid-fixed-center - Starting at 1600 px, the grid will be fixed width and centered horizontally in the viewport.
-
-The default behavior for a grid will be to fill the viewport, which is the behavior that will occur when the fixed-width classes are omitted.
+ - .marginless - Eliminates the outer padding that prevents a row's content from spanning edge to edge.
+ - .fixed-left - Starting at 1600 px, the grid will be fixed width and left aligned in the viewport.
+ - .fixed-center - Starting at 1600 px, the grid will be fixed width and centered horizontally in the viewport.
+ - .grid-fixed-left - Deprecated, see *.fixed-left*
+ - .grid-fixed-center - Deprecated, see *.fixed-center*
+ 
+The default behavior for a grid will be to fill the viewport and preserve outer padding on edge-adjacent columns.
 
 #### Rows ####
 
