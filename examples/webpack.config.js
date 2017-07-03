@@ -1,6 +1,4 @@
 const combineLoaders = require('webpack-combine-loaders');
-const cssnext = require('postcss-cssnext');
-const cssImport = require('postcss-import');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
@@ -35,8 +33,6 @@ const config = {
 						localIdentName: '[name]__[local]___[hash:base64:5]',
 						minimize: isProd,
 					},
-				}, {
-					loader: 'postcss-loader',
 				}]),
 			}),
 		}],
@@ -46,20 +42,12 @@ const config = {
 			filename: 'index.html',
 			template: path.join(__dirname, 'src', 'index.html'),
 		}),
-		new webpack.LoaderOptionsPlugin({
-			options: {
-				postcss: [
-					cssImport(),
-					cssnext(),
-				],
-			},
-		}),
 		new webpack.optimize.OccurrenceOrderPlugin(),
 		new webpack.NoEmitOnErrorsPlugin(),
 		new ExtractTextPlugin('styles.css'),
 	],
 	resolve: {
-		modules: ['node_modules', './src'],
+		modules: ['node_modules', './build'],
 		extensions: ['.js', '.jsx'],
 	},
 };
@@ -77,10 +65,6 @@ if (isDev) {
 		port: 3000,
 	};
 	config.plugins.push(new webpack.HotModuleReplacementPlugin());
-}
-
-if (isProd) {
-	config.plugins.push(new webpack.optimize.UglifyJsPlugin());
 }
 
 config.entry.unshift('babel-polyfill'); // must always come first in entry list
