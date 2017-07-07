@@ -1,5 +1,5 @@
 import React from 'react';
-import mrg from 'material-responsive-grid.css';
+import mrg from 'material-responsive-grid/material-responsive-grid.css';
 import styles from './styles.css';
 
 const GridTestPage = () => (

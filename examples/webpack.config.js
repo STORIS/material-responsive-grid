@@ -1,4 +1,6 @@
 const combineLoaders = require('webpack-combine-loaders');
+const cssnext = require('postcss-cssnext');
+const cssImport = require('postcss-import');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
@@ -6,7 +8,6 @@ const webpack = require('webpack');
 
 const NODE_ENV = process.env.NODE_ENV;
 const isDev = NODE_ENV === 'development';
-const isProd = NODE_ENV === 'production';
 
 const config = {
 	entry: [
@@ -31,8 +32,9 @@ const config = {
 					query: {
 						modules: true,
 						localIdentName: '[name]__[local]___[hash:base64:5]',
-						minimize: isProd,
 					},
+				}, {
+					loader: 'postcss-loader',
 				}]),
 			}),
 		}],
@@ -42,13 +44,22 @@ const config = {
 			filename: 'index.html',
 			template: path.join(__dirname, 'src', 'index.html'),
 		}),
+		new webpack.LoaderOptionsPlugin({
+			options: {
+				postcss: [
+					cssImport(),
+					cssnext(),
+				],
+			},
+		}),
 		new webpack.optimize.OccurrenceOrderPlugin(),
 		new webpack.NoEmitOnErrorsPlugin(),
 		new ExtractTextPlugin('styles.css'),
 	],
 	resolve: {
-		modules: ['node_modules', './build'],
+		modules: ['node_modules', './src'],
 		extensions: ['.js', '.jsx'],
+		alias: { 'material-responsive-grid/material-responsive-grid.css': path.resolve(__dirname, '../src/index.css') }
 	},
 };
 

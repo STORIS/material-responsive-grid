@@ -1,0 +1,59 @@
+{
+	"extends": [
+		"airbnb-base",
+		"airbnb-base/rules/strict",
+		"prettier"
+	],
+	"env": {
+		"browser": true,
+		"commonjs": true,
+		"es6": true,
+		"node": true,
+		"mocha": true
+	},
+	"globals": {},
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"ecmaFeatures": {},
+		"sourceType": "module"
+	},
+	"rules": {
+		"indent": ["error", "tab", {"SwitchCase": 1}],
+		"no-tabs": "off",
+		"import/no-extraneous-dependencies": ["error", {
+			"devDependencies": [
+				"test/**", // tape, common npm pattern
+				"tests/**", // also common npm pattern
+				"spec/**", // mocha, rspec-like pattern
+				"**/__tests__/**", // jest pattern
+				"test.js", // repos with a single test file
+				"test-*.js", // repos with multiple top-level test files
+				"**/*.test.js", // tests where the extension denotes that it is a test
+				"**/*.spec.js", // tests where the extension denotes that it is a test
+				"**/*.spec.jsx", // tests where the extension denotes that it is a test
+				"**/webpack.config.js", // webpack config
+				"**/webpack.config.*.js", // webpack config
+				"**/rollup.config.js", // rollup config
+				"**/gulpfile.js", // gulp config
+				"**/gulpfile.*.js", // gulp config
+				"**/Gruntfile" // grunt config
+			],
+			"optionalDependencies": false
+		}],
+		"prettier/prettier": ["error", {
+			"useTabs": true,
+			"printWidth": 100,
+			"tabWidth": 2,
+			"singleQuote": true,
+			"trailingComma": "all",
+			"bracketSpacing": true,
+			"jsxBracketSameLine": false,
+			"parser": "babylon",
+			"semi": true
+		}]
+	},
+	"plugins": [
+		"mocha",
+		"prettier"
+	]
+}
