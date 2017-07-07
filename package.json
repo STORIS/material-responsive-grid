@@ -1,7 +1,7 @@
 {
   "name": "material-responsive-grid-source",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A grid system that adheres to the responsive UI standards outlined for Google's Material Design",
   "style": "build/material-responsive-grid.css",
   "main": "build/material-responsive-grid.css",
