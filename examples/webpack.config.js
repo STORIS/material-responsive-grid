@@ -8,7 +8,6 @@ const webpack = require('webpack');
 
 const NODE_ENV = process.env.NODE_ENV;
 const isDev = NODE_ENV === 'development';
-const isProd = NODE_ENV === 'production';
 
 const config = {
 	entry: [
@@ -33,7 +32,6 @@ const config = {
 					query: {
 						modules: true,
 						localIdentName: '[name]__[local]___[hash:base64:5]',
-						minimize: isProd,
 					},
 				}, {
 					loader: 'postcss-loader',
@@ -61,6 +59,7 @@ const config = {
 	resolve: {
 		modules: ['node_modules', './src'],
 		extensions: ['.js', '.jsx'],
+		alias: { 'material-responsive-grid/material-responsive-grid.css': path.resolve(__dirname, '../src/index.css') }
 	},
 };
 
@@ -77,10 +76,6 @@ if (isDev) {
 		port: 3000,
 	};
 	config.plugins.push(new webpack.HotModuleReplacementPlugin());
-}
-
-if (isProd) {
-	config.plugins.push(new webpack.optimize.UglifyJsPlugin());
 }
 
 config.entry.unshift('babel-polyfill'); // must always come first in entry list
