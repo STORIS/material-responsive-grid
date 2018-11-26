@@ -105,7 +105,7 @@ Columns must be contained by a Row and have the following classes:
       <div class="hidden-md-down col-half-row">
          <p>This column isn't visible for extra-small, small, 
          and medium screens, but is visible for large and 
-         extra-large screens.  It consumes half of the row.
+         extra-large screens.  It consumes half of the row.</p>
       </div>
       <div class="hidden-sm-down hidden-up-xl col-md-12">
          <p>This column is only visible for medium and large
